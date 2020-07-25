@@ -72,6 +72,16 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
+/* helper to task 19 */
+binary_tree_t *bt_find_lca(binary_tree_t *root, const binary_tree_t *first,
+			   const binary_tree_t *second);
+/* helper to task 20 */
+void operate_on_level(const binary_tree_t *tree, size_t lvl,
+		      void (*func)(int));
+
+/* helper to task 21 */
+int check_bt_complete(const binary_tree_t *tree, size_t i, size_t size);
+
 /* advanced tasks 24-28: binary search trees */
 int binary_tree_is_bst(const binary_tree_t *tree);
 bst_t *bst_insert(bst_t **tree, int value);

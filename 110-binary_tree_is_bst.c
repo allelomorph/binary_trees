@@ -24,7 +24,7 @@ int check_if_BST(const binary_tree_t *tree, int *prev)
 		/* prev updates to current */
 		*prev = tree->n;
 
-		return check_if_BST(tree->right, prev);
+		return (check_if_BST(tree->right, prev));
 	}
 	/* recursion has reached an edge of the tree */
 	return (1);
@@ -45,5 +45,5 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	return check_if_BST(tree, &prev);
+	return (check_if_BST(tree, &prev));
 }

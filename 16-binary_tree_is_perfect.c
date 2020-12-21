@@ -9,6 +9,7 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	/* root is null */
 	if (!tree)
 		return (0);
 
@@ -21,6 +22,9 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (binary_tree_is_perfect(tree->left) &&
 			binary_tree_is_perfect(tree->right));
 	}
-	else
+	else if (tree->right || tree->left)
 		return (0);
+
+	/* leaf reached */
+	return (1);
 }

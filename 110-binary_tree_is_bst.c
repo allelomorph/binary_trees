@@ -12,14 +12,15 @@ int check_if_BST(const binary_tree_t *tree, int *prev)
 {
 	if (tree)
 	{
-		pritnf("tree->n: %i prev: %i\n", tree->n, *prev);
-		/* in-order traversal: recurse left, test, recurse right */
-		/* branching left tests against prev inherited from parent */
-		/* while branching right tests against prev = parent->n */
+		/*
+		 * in-order traversal: recurse left, test, recurse right
+		 * branching left tests against prev inherited from parent
+		 * while branching right tests against prev = parent->n
+		 */
 		if (!check_if_BST(tree->left, prev))
 			return (0);
 
-		/**
+		/*
 		 * checks both for repeat values and for left_child < parent
 		 * and right_child > parent
 		 */

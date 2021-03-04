@@ -4,6 +4,7 @@
 /* free */
 #include <stdlib.h>
 
+#include <stdio.h>
 
 /**
  * bst_find_min - find minimum value in a Binary Search Tree
@@ -71,13 +72,13 @@ bst_t *bst_remove(bst_t *root, int value)
 			free(root);
 			return (temp);
 		}
-		/* node with two children: */
-		/* get the in-order successor (smallest in the right subtree) */
+		/* node with two children: get the in-order successor */
 		temp = bst_find_min(root->right);
-		/* copy the in-order successor's content to this node */
-		root->n = temp->n;
+		root->n = temp->n; /* copy the in-order successor's content */
 		/* delete the in-order successor */
 		root->right = bst_remove(root->right, temp->n);
+		if (root->right)
+			root->right->parent = root;
 	}
 	return (root);
 }

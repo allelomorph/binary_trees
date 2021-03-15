@@ -19,6 +19,18 @@ struct binary_tree_s
 	struct binary_tree_s *right;
 };
 
+/**
+ * struct avl_data_s - combined recrusive height and AVL balance
+ *
+ * @height: height of a subtree
+ * @is_AVL: 0 if balance factor of subtree is < -1 or > 1; 1 otherwise
+ */
+typedef struct avl_data_s
+{
+	int height;
+	int is_AVL;
+} avl_data_t;
+
 /* mandatory tasks 0-18 + advanced tasks 19-24, 30, 36 */
 typedef struct binary_tree_s binary_tree_t;
 
@@ -98,6 +110,10 @@ avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
 avl_t *avl_remove(avl_t *root, int value);
 avl_t *sorted_array_to_avl(int *array, size_t size);
+
+/* helpers to task 30 */
+avl_data_t BST_is_AVL_balanced(const binary_tree_t *tree);
+int tree_is_BST(const binary_tree_t *tree, int *prev);
 
 /* advanced tasks 36-40: Max Binary Heap */
 int binary_tree_is_heap(const binary_tree_t *tree);

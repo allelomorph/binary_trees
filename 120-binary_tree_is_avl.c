@@ -3,16 +3,21 @@
 #include <limits.h>
 
 
+#ifndef MAX_INT
+#define MAX_INT
+
 /**
  * max_int - finds larger of two int values
  * @a: first value to compare
  * @b: second value to compare
  * Return: larger int value, or value of both if equal
  */
-int max_int(int a, int b)
+inline int max_int(int a, int b)
 {
 	return ((a > b) ? a : b);
 }
+
+#endif
 
 
 /**
